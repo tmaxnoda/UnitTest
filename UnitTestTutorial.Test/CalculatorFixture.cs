@@ -19,5 +19,22 @@ namespace UnitTestTutorial.Test
             //assert
             Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
         }
+
+        [TestMethod]
+
+        public void Subtract()
+        {
+            //arrange
+            int val1 = 6;
+            int val2 = 2;
+            int expectedvalue = 4;
+
+            //act
+            var sut = new Calculator();
+            int actual = sut.Subtract(val1, val2);
+
+            //assert
+            Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
+        }
     }
 }
