@@ -6,6 +6,24 @@ namespace UnitTestTutorial.Test
     [TestClass]
     public class CalculatorFixture
     {
+
+        [TestInitialize]
+        public void OonTestInitialize()
+        {
+            _SystemUnderTest = null;
+        }
+        private Calculator _SystemUnderTest;
+
+        public Calculator SystemUnderTest {
+            get {
+                if (_SystemUnderTest == null) {
+                    _SystemUnderTest = new Calculator();
+                }
+
+                return _SystemUnderTest;
+            }
+        }
+
         [TestMethod]
         public void Add()
         {
@@ -14,8 +32,8 @@ namespace UnitTestTutorial.Test
             int val2 = 3;
             int expectedvalue = 5;
             //act
-            var sut = new Calculator();
-            int actual = sut.Add(val1, val2);
+        //    var sut = new Calculator();
+            int actual = SystemUnderTest.Add(val1, val2);
             //assert
             Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
         }
@@ -30,8 +48,8 @@ namespace UnitTestTutorial.Test
             int expectedvalue = 4;
 
             //act
-            var sut = new Calculator();
-            int actual = sut.Subtract(val1, val2);
+           // var sut = new Calculator();
+            int actual = SystemUnderTest.Subtract(val1, val2);
 
             //assert
             Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
