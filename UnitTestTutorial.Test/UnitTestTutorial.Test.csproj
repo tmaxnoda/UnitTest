@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+  <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UnitTestTutorial.API\UnitTestTutorial.API.csproj" />
+    <ProjectReference Include="..\UnitTestTutorial.WebUi\UnitTestTutorial.WebUi.csproj" />
   </ItemGroup>
 
 </Project>

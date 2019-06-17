@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using UnitTestTutorial.API.Models;
 
 namespace UnitTestTutorial.Test
@@ -53,6 +54,61 @@ namespace UnitTestTutorial.Test
 
             //assert
             Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
+        }
+
+
+        [TestMethod]
+
+        public void Multtiplication()
+        {
+            //arrange
+            int val1 = 6;
+            int val2 = 2;
+            int expectedvalue = 12;
+
+            //act
+            // var sut = new Calculator();
+            int actual = SystemUnderTest.Multiply(val1, val2);
+
+            //assert
+            Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
+        }
+
+
+        [TestMethod]
+
+        public void Division()
+        {
+            //arrange
+            int val1 = 6;
+            int val2 = 2;
+            int expectedvalue = 3;
+
+            //act
+            // var sut = new Calculator();
+            int actual = SystemUnderTest.Divide(val1, val2);
+
+            //assert
+            Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+
+        public void DivisionByZero()
+        {
+            //arrange
+            int val1 = 6;
+            int val2 = 0;
+            //int expectedvalue = 3;
+
+            //act
+            // var sut = new Calculator();
+            int actual = SystemUnderTest.Divide(val1, val2);
+
+            //assert
+            //Assert.AreEqual<int>(expectedvalue, actual, "Wrong Result");
         }
     }
 }

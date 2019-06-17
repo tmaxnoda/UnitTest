@@ -16,5 +16,18 @@ namespace UnitTestTutorial.API.Models
         {
             return val1 - val2;
         }
+
+        public int Multiply(int val1, int val2)
+        {
+            return val1 * val2;
+        }
+
+        public int Divide(int val1, int val2)
+        {
+            //var div = val1 / val2;
+            if (val2 == 0) throw new InvalidOperationException("Argument cannot be zero");
+
+            return val1/val2;
+        }
     }
 }
