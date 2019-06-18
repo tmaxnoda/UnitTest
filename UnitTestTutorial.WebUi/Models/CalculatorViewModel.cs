@@ -16,7 +16,7 @@ namespace UnitTestTutorial.WebUi.Models
         public double Value2 { get; set; }
 
         [Display(Name = "Result")]
-        public string ResultValue { get; set; }
+        public double ResultValue { get; set; }
 
         [Display(Name = "Operators")]
         public List<SelectListItem> Operators { get; set; }
