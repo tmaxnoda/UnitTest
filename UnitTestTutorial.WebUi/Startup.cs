@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UnitTestTutorial.API.Models;
 
 namespace UnitTestTutorial.WebUi
 {
@@ -22,6 +23,7 @@ namespace UnitTestTutorial.WebUi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IcalculatorService, Calculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
